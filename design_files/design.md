@@ -18,3 +18,31 @@ To satisfy functional requirements, the system should have the following high le
 ### User Login
 - This unit will handle access to the application
 - Unit will handle user login data 
+
+## Database Models
+### Model Specifics
+- User:
+    - Std Django User
+- Account:
+  - Id int
+  - Name text
+  - Category enum
+  - LastTransaction date
+  - Balance int
+- Transaction:
+  - Id int
+  - account_id
+  - Date date
+  - Type enum
+  - Description text
+  - Amount int
+  - AccountAfter int
+
+### Relationships
+- account 1 - m transaction
+
+### Enums
+- Account.Category:
+  - TBD
+- Transaction.Type:
+  - TBD
