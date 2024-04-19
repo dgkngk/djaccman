@@ -7,6 +7,8 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.utils import timezone
 
+from djaccman_app.models import Account, Transaction
+
 
 def login_view(request):
     # View for user login page
@@ -35,5 +37,6 @@ def logout_view(request):
 
 @login_required(redirect_field_name='next', login_url='login')
 def home_view(request):
-    return render(request, 'home.html')
+    accounts = Account.objects.all().exclude(is_active=False)
+    return render(request, 'home.html', {'accounts': accounts})
 

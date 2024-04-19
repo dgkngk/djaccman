@@ -5,8 +5,9 @@ To satisfy functional requirements, the system should have the following high le
 - Database Models
 - Accounts Page
 - Account Details Page
-- Payment, Receivable, Debt, Collection modals
-- Reminder
+- Create account modal
+- PRDC (Payment, Receivable, Debt, Collection) modal
+- Reminder TBD
 
 ## General specifics
 - System will be composed of two containers, one will carry the backend logic, and the other will carry the database.
@@ -29,6 +30,7 @@ To satisfy functional requirements, the system should have the following high le
   - Category enum
   - LastTransaction date
   - Balance int
+  - IsActive bool
 - Transaction:
   - Id int
   - account_id
@@ -46,3 +48,14 @@ To satisfy functional requirements, the system should have the following high le
   - TBD
 - Transaction.Type:
   - TBD
+
+## Accounts Page
+- This page will be contained in the home.html template
+- Datatable containing accounts in the database
+- Datatable accounts will contain account details link
+- Will be contained in home view
+
+## Account Details Page
+- This page will be contained in the details.html template
+- Datatable containing accounts in the database
+- Will be contained in details view
