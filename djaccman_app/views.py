@@ -40,3 +40,8 @@ def home_view(request):
     accounts = Account.objects.all().exclude(is_active=False)
     return render(request, 'home.html', {'accounts': accounts})
 
+
+def details_view(request, account_id):
+    account = get_object_or_404(Account, pk=account_id)
+    transactions = Transaction.objects.filter(account_id=account_id)
+    return render(request, 'details.html', {'account': account, 'transactions': transactions})
