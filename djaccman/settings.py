@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-(7fycbxi%p@^-o&fxe@kzcnh#56uhjdfeqx^$30dgy4!^fo%i4
 DEBUG = True
 
 ALLOWED_HOSTS = ['https://djaccman.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['https://djaccman.onrender.com']
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
