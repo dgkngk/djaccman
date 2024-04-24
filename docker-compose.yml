@@ -9,6 +9,10 @@ services:
     extends:
       service: web
     command: python manage.py migrate
+  web_superuser:
+    extends:
+      service: web
+    command: python manage.py createsuperuser --username $DJANGO_SUPERUSER_USERNAME --email $DJANGO_SUPERUSER_EMAIL
   web_run:
     extends:
       service: web
