@@ -5,17 +5,10 @@ services:
     build: .
     volumes:
       - .:/app
-  web_migrate:
-    extends:
-      service: web
-    command: sh -c "python manage.py makemigrations && python manage.py migrate"
-  web_superuser:
-    extends:
-      service: web
-    command: python manage.py createsuperuser --username $DJANGO_SUPERUSER_USERNAME --email $DJANGO_SUPERUSER_EMAIL
-  web_run:
-    extends:
-      service: web
-    command: python manage.py runserver 0.0.0.0:8000
+    command: >
+      sh -c "python manage.py makemigrations &&
+      python manage.py migrate &&
+      python manage.py createsuperuser --username admin --email admin@localhost --noinput &&
+      python manage.py runserver 0.0.0.0:8000"
     ports:
       - "8000:8000"
