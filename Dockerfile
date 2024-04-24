@@ -2,6 +2,7 @@ FROM python:3.12-slim
 LABEL authors="dgkngk"
 
 WORKDIR .
+RUN echo "$(DJANGO_SUPERUSER_USERNAME)"
 
 COPY requirements.txt .
 RUN pip install -r requirements.txt
