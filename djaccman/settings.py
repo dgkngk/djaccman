@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-(7fycbxi%p@^-o&fxe@kzcnh#56uhjdfeqx^$30dgy4!^fo%i4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://djaccman.onrender.com']
-CSRF_TRUSTED_ORIGINS = ['https://djaccman.onrender.com']
+ALLOWED_HOSTS = ['https://djaccman.onrender.com', '127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://djaccman.onrender.com', 'https://127.0.0.1']
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
